@@ -1,0 +1,1 @@
+{% if include.app.want_issue and include.app.want_issue != 0 %}<a class="btn" href="https://github.com/{{ site.repo }}/issues/{{ include.app.want_issue }}">👍 Want this</a>{% else %}<a class="btn" href="https://github.com/{{ site.repo }}/issues?q=label%3Awant-this">👍 Want this</a>{% endif %}

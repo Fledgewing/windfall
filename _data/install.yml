@@ -1,0 +1,49 @@
+# Each guide: device, browser, a stable id, and steps. Each step names an illustration in _includes/install/ and a caption.
+- id: ios-safari
+  device: iPhone & iPad
+  browser: Safari
+  steps:
+    - { ill: ios-bar, text: "Tap the <b>Share</b> button in the toolbar." }
+    - { ill: ios-sheet, text: "Scroll down and tap <b>Add to Home Screen</b>." }
+    - { ill: ios-add, text: "Tap <b>Add</b>. The app is now on your home screen." }
+- id: ios-chrome
+  device: iPhone & iPad
+  browser: Chrome or Edge
+  steps:
+    - { ill: ios-chrome-bar, text: "Tap <b>Share</b> at the right of the address bar." }
+    - { ill: ios-sheet, text: "Tap <b>Add to Home Screen</b>." }
+    - { ill: ios-add, text: "Tap <b>Add</b>." }
+- id: android-chrome
+  device: Android
+  browser: Chrome
+  steps:
+    - { ill: and-menu, text: "Tap <b>⋮</b> at the top right." }
+    - { ill: and-menu-open, item: Add to home screen, text: "Tap <b>Add to home screen</b>." }
+    - { ill: and-dlg, text: "Tap <b>Install</b>. Find it in your app drawer." }
+- id: android-edge
+  device: Android
+  browser: Edge
+  steps:
+    - { ill: and-menu, text: "Tap <b>⋯</b> in the bottom bar." }
+    - { ill: and-menu-open, item: Add to phone, text: "Tap <b>Add to phone</b>." }
+    - { ill: and-dlg, text: "Tap <b>Install</b>." }
+- id: desktop-chrome
+  device: Computer
+  browser: Chrome
+  steps:
+    - { ill: desk-bar, text: "Click the <b>install icon</b> at the right of the address bar." }
+    - { ill: desk-menu, btn: "⋮", item: "Cast, save and share › Install page as app", text: "No icon? Use <b>⋮ › Cast, save and share › Install page as app</b>." }
+    - { ill: desk-dlg, text: "Click <b>Install</b>." }
+- id: desktop-edge
+  device: Computer
+  browser: Edge
+  steps:
+    - { ill: desk-bar, text: "Click the <b>install icon</b> in the address bar." }
+    - { ill: desk-menu, btn: "⋯", item: "Apps › Install this site as an app", text: "Or use <b>⋯ › Apps › Install this site as an app</b>." }
+    - { ill: desk-dlg, text: "Click <b>Install</b>." }
+- id: mac-safari
+  device: Mac
+  browser: Safari
+  steps:
+    - { ill: mac-file, text: "Choose <b>File › Add to Dock</b>." }
+    - { ill: mac-add, text: "Click <b>Add</b>. The app opens from the Dock or Launchpad." }

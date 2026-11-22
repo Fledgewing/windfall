@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<article class="wrap narrow post" style="padding-block:24px 60px">
+  <div class="crumbs"><a href="{{ '/blog/' | relative_url }}">Blog</a> / <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time></div>
+  <h1>{{ page.title }}</h1>
+  {% if page.tags.size > 0 %}<div class="tags">{% for t in page.tags %}<span>{{ t }}</span>{% endfor %}</div>{% endif %}
+  <div class="body">{{ content }}</div>
+  <div class="discuss">
+    <div><b>Thoughts or questions?</b><div class="mute small">Talk about this post on GitHub.</div></div>
+    <a class="btn pri" href="{% if page.discussion %}{{ page.discussion }}{% else %}https://github.com/{{ site.repo }}/discussions{% endif %}">Discuss on GitHub</a>
+  </div>
+</article>

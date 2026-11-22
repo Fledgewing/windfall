@@ -1,0 +1,41 @@
+title: Windfall
+description: Small, useful software grown in an experimental software factory. Free to pick up.
+url: https://windfall.canopypowered.com
+baseurl: ""
+lang: en
+author: Fledgewing
+repo: Fledgewing/windfall
+github_url: https://github.com/Fledgewing
+sponsor_url: https://github.com/sponsors/Fledgewing
+canopy_url: https://www.canopypowered.com/
+
+markdown: kramdown
+permalink: /blog/:year/:month/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: blog/feed.xml
+
+collections:
+  apps:
+    output: true
+    permalink: /apps/:name/
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+  - scope: { path: "", type: apps }
+    values: { layout: app }
+  - scope: { path: "" }
+    values: { layout: default }
+
+exclude:
+  - README.md
+  - LICENSE
+  - CONTENT-LICENSE.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

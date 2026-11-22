@@ -1,0 +1,43 @@
+---
+title: Install guide
+description: How to install a web app on iPhone, iPad, Android, Windows, Mac or Linux with Safari, Chrome or Edge.
+permalink: /install/
+scripts: [/assets/js/install.js]
+---
+<div class="wrap narrow page-head">
+  <div class="eyebrow">Install guide</div>
+  <h1>Put a web app on your home screen.</h1>
+  <p class="lede">Many Windfall apps are web apps. Installing one gives it its own icon and full screen, and it keeps working offline. It takes about ten seconds, with no app store and no account.</p>
+</div>
+<section class="flush"><div class="wrap">
+  <p class="mute" id="detect" hidden>We picked your device below. Choose another if it’s wrong.</p>
+  <div class="ptabs" role="group" aria-label="Device and browser" hidden>
+    {% for g in site.data.install %}<button class="chip" type="button" aria-pressed="false" data-g="{{ g.id }}">{{ g.device }} · {{ g.browser }}</button>{% endfor %}
+  </div>
+  {% for g in site.data.install %}
+  <div class="guide" id="{{ g.id }}">
+    <h3>{{ g.device }} · {{ g.browser }}</h3>
+    <div class="pbox">{% for s in g.steps %}
+      <div class="pstep"><span class="num">{{ forloop.index }}</span>{% include install/{{ s.ill }}.html step=s %}<p>{{ s.text }}</p></div>
+    {% endfor %}</div>
+  </div>
+  {% endfor %}
+  <p class="mute small" style="margin-top:28px">Drawings show where to tap. Your browser may look a little different after an update.</p>
+</div></section>
+<section><div class="wrap twin">
+  <div class="callout"><h4>Don’t see the option?</h4><ul>
+    <li>On iPhone and iPad, Chrome and Edge need iOS 16.4 or newer. Safari always works.</li>
+    <li>Opened the link inside another app, such as Gmail or Instagram? Open it in your browser first.</li>
+    <li>Firefox on a computer can’t install web apps. Use Chrome, Edge or Safari.</li>
+    <li>Already installed? The option is hidden. Look for the icon on your home screen or in your app list.</li>
+  </ul></div>
+  <div class="callout"><h4>Removing an app</h4><ul>
+    <li><b>iPhone, iPad, Android:</b> press and hold the icon, then remove it like any other app.</li>
+    <li><b>Chrome or Edge on a computer:</b> open the app, open its menu, choose Uninstall.</li>
+    <li><b>Mac Safari:</b> drag it out of the Dock, then delete it from your Applications folder.</li>
+  </ul><p class="mute" style="margin-top:10px">Your data stays on the device until you remove the app.</p></div>
+</div></section>
+<section><div class="wrap"><div class="callout row">
+  <div><h4>Try it now</h4><p class="mute">Open Word Quest and follow the steps above.</p></div>
+  <a class="btn pri" href="https://spelling-hive.pages.dev/">Open Word Quest</a>
+</div></div></section>

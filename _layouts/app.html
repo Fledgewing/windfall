@@ -1,0 +1,23 @@
+---
+layout: default
+---
+{% assign a = page %}
+<div class="wrap app-hero">
+  <div class="crumbs"><a href="{{ '/' | relative_url }}">Apps</a> / {{ a.category }} / {{ a.name }}</div>
+  <div class="split">
+    <div>
+      <div class="eyebrow">{{ a.category }}{% if a.status == 'soon' %} · Coming soon{% else %} · {{ a.price }}{% endif %}</div>
+      <h1>{{ a.name }}</h1>
+      <p class="tagline">{{ a.tagline }}</p>
+      <p>{{ a.summary }}</p>
+      {% if a.status == 'soon' %}
+        {% include want.html app=a %}
+      {% else %}
+      <div class="btns">{% for l in a.links %}{% unless l.url == a.url %}<a class="btn{% if l.primary %} pri{% endif %}" href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endunless %}{% endfor %}</div>
+      <div class="meta"><span><i></i>Grown in the Orchard</span><span>{{ a.license_short }}</span></div>
+      {% endif %}
+    </div>
+    {% if a.screen %}<div class="art">{% include screens/{{ a.screen }}.html %}</div>{% endif %}
+  </div>
+</div>
+{{ content }}

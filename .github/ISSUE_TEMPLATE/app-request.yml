@@ -1,0 +1,28 @@
+name: Request an app
+description: Suggest an app you wish existed. Requests are public; 👍 the ones you want most.
+title: ""
+labels: [app-request]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for planting a seed. Requests with the most 👍 get grown first. Please search open requests before adding a new one, and add a 👍 to an existing one instead of repeating it.
+  - type: textarea
+    id: who
+    attributes:
+      label: Who is it for, and why would they use it?
+      description: The problem it solves and who has that problem.
+      placeholder: Our family forgets which plants were watered. A shared tick list by the back door would fix it.
+    validations:
+      required: true
+  - type: textarea
+    id: today
+    attributes:
+      label: How do you handle this today?
+      description: Optional. Apps you've tried, paper lists, nothing at all.
+  - type: dropdown
+    id: devices
+    attributes:
+      label: Where would you use it?
+      multiple: true
+      options: [Phone, Tablet, Computer, Home Assistant, E-reader, Other]

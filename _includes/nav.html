@@ -1,0 +1,9 @@
+<nav class="wrap topnav" aria-label="Main">
+  <a class="brand" href="{{ '/' | relative_url }}">Windfall</a>
+  {% assign p = page.url %}
+  <a href="{{ '/' | relative_url }}"{% if p == '/' or p contains '/apps/' %} aria-current="page"{% endif %}>Apps</a>
+  <a href="{{ '/principles/' | relative_url }}"{% if p == '/principles/' %} aria-current="page"{% endif %}>Principles</a>
+  <a href="{{ '/install/' | relative_url }}"{% if p == '/install/' %} aria-current="page"{% endif %}>Install guide</a>
+  <a href="{{ '/blog/' | relative_url }}"{% if p contains '/blog/' %} aria-current="page"{% endif %}>Blog</a>
+  <a href="{{ '/#request' | relative_url }}">Request an app</a>
+</nav>

@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Questions and ideas
+    url: https://github.com/Fledgewing/windfall/discussions
+    about: Talk about Windfall, its apps or a blog post.

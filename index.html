@@ -1,0 +1,90 @@
+---
+hero: true
+scripts: [/assets/js/fireflies.js, /assets/js/home.js]
+description: Small, useful software grown in an experimental software factory. Free to pick up.
+---
+{% assign live = site.apps | where: "status", "live" | sort: "order" %}
+{% assign soon = site.apps | where: "status", "soon" | sort: "order" %}
+{% assign cats = site.apps | sort: "order" | map: "category" | uniq %}
+<div class="hero"><canvas id="fx" aria-hidden="true"></canvas>
+  {% include nav.html %}
+  <div class="wrap inner">
+    <div class="eyebrow">Fruit of an experimental software factory</div>
+    <h1>Wind<em>fall</em></h1>
+    <p class="lede">Small, useful software that fell from the orchard. Free to pick up. <a href="{{ '/principles/' | relative_url }}">What does free mean here?</a></p>
+    <div class="btns"><a class="btn pri" href="#apps">See the apps</a><a class="btn" href="#request">Request an app</a></div>
+  </div>
+</div>
+
+<section class="flush" id="apps"><div class="wrap">
+  <div class="chips" role="group" aria-label="Filter by category" hidden>
+    <button class="chip" type="button" aria-pressed="true" data-cat="All">All<span>{{ site.apps.size }}</span></button>
+    {% for c in cats %}{% assign n = site.apps | where: "category", c %}<button class="chip" type="button" aria-pressed="false" data-cat="{{ c }}">{{ c }}<span>{{ n.size }}</span></button>{% endfor %}
+  </div>
+  {% for a in live %}
+  <div class="prod{% cycle '', ' flip' %}" data-cat="{{ a.category }}"><div class="split"><div>
+    <div class="eyebrow">{{ a.category }}</div>
+    <h3><a href="{{ a.url | relative_url }}">{{ a.name }}</a></h3>
+    <p class="tagline">{{ a.tagline }}</p>
+    <p>{{ a.summary }}</p>
+    <ul class="facts">{% for f in a.facts %}<li>{{ f }}</li>{% endfor %}</ul>
+    <div class="btns">{% for l in a.links %}<a class="btn{% if l.primary %} pri{% endif %}" href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endfor %}</div>
+    <div class="meta"><span><i></i>Grown in the Orchard</span><span>{{ a.price }}</span><span>{{ a.license_short }}</span></div>
+  </div><div>{% include screens/{{ a.screen }}.html %}</div></div></div>
+  {% endfor %}
+  <p class="mute empty" id="empty" hidden>Nothing ripe in this category yet. It’s on the way below.</p>
+</div></section>
+
+{% if soon.size > 0 %}
+<section id="soon"><div class="wrap">
+  <h2>Ripening</h2>
+  <p class="mute">Still on the branch. Tap “Want this” to tell me which to pick first.</p>
+  <div class="soon">{% for s in soon %}
+    <article data-cat="{{ s.category }}"><span class="eyebrow">{{ s.stage }} · {{ s.category }}</span><h4>{{ s.name }}</h4><p class="tagline">{{ s.tagline }}</p><p class="mute">{{ s.summary }}</p>{% include want.html app=s %}</article>
+  {% endfor %}</div>
+</div></section>
+{% endif %}
+
+<section class="factory"><div class="wrap split">
+  <div>
+    <div class="eyebrow">How it’s made</div>
+    <h2>Grown in the Orchard</h2>
+    <p>Everything here comes out of Orchard, an experimental software factory I run privately. Some apps are my own projects and some I build with friends, but they all grow the same way. AI agents plan the work, write the tests first, review each other and ship the releases. People set the goals and judge what comes out. Every app is held to the bar you’d expect from a professional team.</p>
+    <div class="btns"><a class="btn" href="{{ '/principles/' | relative_url }}">Read the principles</a></div>
+  </div>
+  <div class="steps"><div><b>Goal</b>A person names an outcome.</div><div><b>Plan</b>Agents split it into small tasks.</div><div><b>Build</b>Tests first, then the code, then review.</div><div><b>Ship</b>A release goes live only if it beats the last one.</div></div>
+</div></section>
+
+<section id="request"><div class="wrap twin">
+  <div>
+    <h2>Plant a seed</h2>
+    <p class="mute">Tell me the app you wish existed. Popular requests get grown first.</p>
+    <form id="req" action="https://github.com/{{ site.repo }}/issues/new" method="get">
+      <input type="hidden" name="template" value="app-request.yml">
+      <input type="hidden" name="labels" value="app-request">
+      <label for="rq-t">What should the app do?<input id="rq-t" name="title" required placeholder="Track which plants I watered and when"></label>
+      <label for="rq-w">Who is it for, and why would they use it?<textarea id="rq-w" name="who" rows="3" placeholder="Our family forgets which plants were watered. A shared tick list by the back door would fix it."></textarea></label>
+      <div><button class="btn pri" type="submit">Send request on GitHub</button></div>
+      <small class="mute">Opens a public GitHub issue with your text filled in. You need a free GitHub account.</small>
+    </form>
+  </div>
+  <div>
+    <h3 class="eyebrow">Most wanted</h3>
+    <ul class="votes" id="votes"><li class="mute">Loading requests from GitHub…</li></ul>
+    <p class="btns" style="margin-top:14px"><a class="btn" href="https://github.com/{{ site.repo }}/issues?q=is%3Aissue+is%3Aopen+label%3Aapp-request+sort%3Areactions-%2B1-desc">All requests on GitHub</a></p>
+  </div>
+</div></section>
+
+<section><div class="wrap twin">
+  <div>
+    <h2>New to web apps?</h2>
+    <p class="mute">Word Quest and most apps to come install straight from your browser, no app store needed. The install guide walks you through it on your phone, tablet or computer.</p>
+    <a class="btn pri" href="{{ '/install/' | relative_url }}">Open the install guide</a>
+  </div>
+  <div>
+    <h2>From the blog</h2>
+    {% if site.posts.size > 0 %}
+    <ul class="posts compact">{% for p in site.posts limit:2 %}<li><time>{{ p.date | date: "%b %-d, %Y" }}</time><a href="{{ p.url | relative_url }}">{{ p.title }}</a>{% if p.description %}<p>{{ p.description }}</p>{% endif %}</li>{% endfor %}</ul>
+    {% else %}<p class="mute">The first post is on its way. Follow along with the <a href="{{ '/blog/feed.xml' | relative_url }}">RSS feed</a>.</p>{% endif %}
+  </div>
+</div></section>
