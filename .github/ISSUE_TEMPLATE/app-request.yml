@@ -1,6 +1,5 @@
 name: Request an app
 description: Suggest an app you wish existed. Requests are public; 👍 the ones you want most.
-title: ""
 labels: [app-request]
 body:
   - type: markdown
