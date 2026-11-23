@@ -33,7 +33,7 @@ description: Keep Android e-readers and Xteink pocket readers in sync with your 
   <dt>Price</dt><dd>Free</dd>
 </dl>
 <h2 class="mt">Privacy</h2>
-<p class="mute">Orbify sends nothing to me. It talks to your own BookOrbit server over your own tailnet, and to GitHub to download KOReader and its own updates. It has no analytics.</p>
+<p class="mute">Orbify sends nothing to us. It talks to your own BookOrbit server over your own tailnet, and to GitHub to download KOReader and its own updates. It has no analytics.</p>
 </div></div></section>
 
 <section><div class="wrap" markdown="0">

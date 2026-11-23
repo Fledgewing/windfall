@@ -33,7 +33,7 @@ description: A Home Assistant integration that runs several HVAC systems as one 
   <dt>Price</dt><dd>Free</dd>
 </dl>
 <h2 class="mt">Privacy</h2>
-<p class="mute">House Climate runs entirely inside your Home Assistant. It makes no internet connections and sends nothing to me.</p>
+<p class="mute">House Climate runs entirely inside your Home Assistant. It makes no internet connections and sends nothing to us.</p>
 </div></div></section>
 
 <section><div class="wrap" markdown="0">

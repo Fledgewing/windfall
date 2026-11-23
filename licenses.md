@@ -10,7 +10,7 @@ permalink: /licenses/
 
 ## This site
 - **Code** (layouts, styles, scripts): MIT. See [LICENSE](https://github.com/{{ site.repo }}/blob/main/LICENSE).
-- **Words and illustrations**: © Fledgewing, all rights reserved. See [CONTENT-LICENSE.md](https://github.com/{{ site.repo }}/blob/main/CONTENT-LICENSE.md).
+- **Words and illustrations**: © CanopyPowered, all rights reserved. See [CONTENT-LICENSE.md](https://github.com/{{ site.repo }}/blob/main/CONTENT-LICENSE.md).
 - **Fonts**: [Instrument Serif](https://github.com/Instrument/instrument-serif) and [Manrope](https://github.com/googlefonts/manrope), both under the SIL Open Font License 1.1, hosted on this site. Licence texts are in [assets/fonts](https://github.com/{{ site.repo }}/tree/main/assets/fonts).
 
 ## The apps

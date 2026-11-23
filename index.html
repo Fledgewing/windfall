@@ -38,7 +38,7 @@ description: Small, useful software grown in an experimental software factory. F
 {% if soon.size > 0 %}
 <section id="soon"><div class="wrap">
   <h2>Ripening</h2>
-  <p class="mute">Still on the branch. Tap “Want this” to tell me which to pick first.</p>
+  <p class="mute">Still on the branch. Tap “Want this” to tell us which to pick first.</p>
   <div class="soon">{% for s in soon %}
     <article data-cat="{{ s.category }}"><span class="eyebrow">{{ s.stage }} · {{ s.category }}</span><h4>{{ s.name }}</h4><p class="tagline">{{ s.tagline }}</p><p class="mute">{{ s.summary }}</p>{% include want.html app=s %}</article>
   {% endfor %}</div>
@@ -49,7 +49,7 @@ description: Small, useful software grown in an experimental software factory. F
   <div>
     <div class="eyebrow">How it’s made</div>
     <h2>Grown in the Orchard</h2>
-    <p>Everything here comes out of Orchard, an experimental software factory I run privately. Some apps are my own projects and some I build with friends, but they all grow the same way. AI agents plan the work, write the tests first, review each other and ship the releases. People set the goals and judge what comes out. Every app is held to the bar you’d expect from a professional team.</p>
+    <p>Everything here comes out of Orchard, an experimental software factory we run privately. Apps are built by a small group of people, and they all grow the same way. AI agents plan the work, write the tests first, review each other and ship the releases. People set the goals and judge what comes out. Every app is held to the bar you’d expect from a professional team.</p>
     <div class="btns"><a class="btn" href="{{ '/principles/' | relative_url }}">Read the principles</a></div>
   </div>
   <div class="steps"><div><b>Goal</b>A person names an outcome.</div><div><b>Plan</b>Agents split it into small tasks.</div><div><b>Build</b>Tests first, then the code, then review.</div><div><b>Ship</b>A release goes live only if it beats the last one.</div></div>
@@ -58,7 +58,7 @@ description: Small, useful software grown in an experimental software factory. F
 <section id="request"><div class="wrap twin">
   <div>
     <h2>Plant a seed</h2>
-    <p class="mute">Tell me the app you wish existed. Popular requests get grown first.</p>
+    <p class="mute">Tell us the app you wish existed. Popular requests get grown first.</p>
     <form id="req" action="https://github.com/{{ site.repo }}/issues/new" method="get">
       <input type="hidden" name="template" value="app-request.yml">
       <input type="hidden" name="labels" value="app-request">
