@@ -20,7 +20,7 @@ description: Keep Android e-readers and Xteink pocket readers in sync with your 
 <h2>Get it</h2>
 <p class="mute">Setup steps live with the app itself, so they’re always current.</p>
 <div class="getit">
-  <a href="https://github.com/Fledgewing/Orbify/blob/main/docs/SETUP.md"><b>Android e-readers</b><span>Boox and other Android readers · Setup guide ↗</span></a>
+  <a href="https://github.com/Fledgewing/Orbify/blob/main/android/docs/SETUP.md"><b>Android e-readers</b><span>Boox and other Android readers · Setup guide ↗</span></a>
   <a href="https://github.com/Fledgewing/CrossInk-Tailnet/releases/latest"><b>Xteink pocket readers</b><span>Firmware downloads and flashing steps ↗</span></a>
   <a href="https://github.com/Fledgewing/Orbify/issues"><b>Stuck?</b><span>Ask on the app’s GitHub issues ↗</span></a>
 </div>
